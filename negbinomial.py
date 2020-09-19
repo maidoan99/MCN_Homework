@@ -9,11 +9,14 @@ def prob(n, p, r):
     :param r: số lần thành công mà đạt được thì ngừng
     :return: xác suất của sympol thứ n
     '''
+    if n < r:
+        return 0
+
     p = (np.math.factorial(n - 1) / (np.math.factorial(n - r) * (np.math.factorial(r - 1)))) * (p ** r) * ((1 - p) ** (n - r))
     return p
 
 
-def infoMeasure(n, p, r):
+def infoMeasure(N, p, r):
     '''
 
     :param n: sympol thứ n
@@ -21,7 +24,11 @@ def infoMeasure(n, p, r):
     :param r: số lần thành công mà đạt được thì ngừng
     :return: lượng tin của sympol thứ n
     '''
-    return -np.log2(prob(n, p, r))
+
+    if N < r:
+        return 0
+
+    return -np.log2(prob(N, p, r))
 
 
 def sumProb(N, p, r):
