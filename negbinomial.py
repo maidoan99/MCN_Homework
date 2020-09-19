@@ -6,7 +6,7 @@ def prob(n, p, r):
 
     :param n: sympol thứ n
     :param p: xác suất bernoulli
-    :param r: so lan thanh cong ma dat duoc thi ngung
+    :param r: số lần thành công mà đạt được thì ngừng
     :return: xác suất của sympol thứ n
     '''
     p = (np.math.factorial(n - 1) / (np.math.factorial(n - r) * (np.math.factorial(r - 1)))) * (p ** r) * ((1 - p) ** (n - r))
@@ -18,7 +18,7 @@ def infoMeasure(n, p, r):
 
     :param n: sympol thứ n
     :param p: xác suất bernoulli
-    :param r: so lan thanh cong ma dat duoc thi ngung
+    :param r: số lần thành công mà đạt được thì ngừng
     :return: lượng tin của sympol thứ n
     '''
     return -np.log2(prob(n, p, r))
@@ -29,7 +29,7 @@ def sumProb(N, p, r):
 
     :param n: sympol thứ n
     :param p: xác suất bernoulli
-    :param r: so lan thanh cong ma dat duoc thi ngung
+    :param r: số lần thành công mà đạt được thì ngừng
     :return: tổng xác suất của các sympols
 
     Vì không gian mẫu có N sympol nên tổng xác suất của N sympol đó phải bằng 1.
@@ -49,7 +49,7 @@ def approxEntropy(N, p, r):
 
     :param N: tổng số sympol
     :param p:xác suất bernoulli
-    :param r: so lan thanh cong ma dat duoc thi ngung
+    :param r: số lần thành công mà đạt được thì ngừng
     :return: xấp xỉ entropy của nguồn thông tin
 
     Thực nghiệm:
