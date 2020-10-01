@@ -39,7 +39,7 @@ class PrefixCodeTree:
 
         # Convert encodedData to bit data
         for byte in encodedData:
-            data += f'{byte:0>8b}'
+            data += f'{byte:08b}'
 
         # Decode encodedData
         for i in range(datalen):
